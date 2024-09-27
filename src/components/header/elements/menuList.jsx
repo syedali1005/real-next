@@ -59,7 +59,7 @@ const MenuList = ({ addListing }) => {
           <li>
             <Link href="/shop">Property</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/shop/grid">Property Grid</Link>
           </li>
           <li>
@@ -70,7 +70,7 @@ const MenuList = ({ addListing }) => {
           </li>
           <li>
             <Link href="/shop/right-sidebar">Property right sidebar</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="#">
               Other Pages
@@ -79,7 +79,7 @@ const MenuList = ({ addListing }) => {
               </span>
             </Link>
             <ul>
-              <li>
+              {/* <li>
                 <Link href="/cart">Cart</Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ const MenuList = ({ addListing }) => {
               </li>
               <li>
                 <Link href="/order-tracking">Order Tracking</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/my-account">My Account</Link>
               </li>
