@@ -37,7 +37,7 @@ const MyApp = ({ Component, ...rest }) => {
   return (
     <Fragment>
       <Head>
-        <title>Quarter - Real Estate NextJs Template</title>
+        <title>Real Estate</title>
         <meta name="description" content="Quarter - Real Estate Nextjs Template" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
