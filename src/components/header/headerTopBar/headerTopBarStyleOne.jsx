@@ -4,6 +4,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import HeaderTopInfo from "../elements/headerTopInfo";
 import HeaderSocialLinks from "../elements/headerSocialLinks";
+import LanguageDropDown from "../elements/languageDropdown";
+
 
 const HeaderTopBarOne = function () {
   return (
@@ -18,6 +20,9 @@ const HeaderTopBarOne = function () {
               <div className="top-bar-right text-end">
                 <div className="ltn__top-bar-menu mx-auto">
                   <ul>
+                  <li>
+                      <LanguageDropDown />
+                    </li>
                     <li>
                       {/* <!-- ltn__social-media --> */}
                       <HeaderSocialLinks/>

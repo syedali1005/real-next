@@ -1,5 +1,7 @@
-import Link from "next/link";
+import Link from "next/link"; 
 import { FaPlus, FaAngleDoubleRight } from "react-icons/fa";
+import Image from "next/image"; // Import Image component
+
 const MenuList = ({ addListing }) => {
   return (
     <ul>
@@ -9,51 +11,17 @@ const MenuList = ({ addListing }) => {
         </Link>
         <ul className="sub-menu menu-pages-img-show">
           <li>
-            <Link href="/">Home Style 01</Link>
-            <img src="/img/home-demos/home-1.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-two">Home Style 02</Link>
-            <img src="/img/home-demos/home-2.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-three">Home Style 03</Link>
-            <img src="/img/home-demos/home-3.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-four">Home Style 04</Link>
-            <img src="/img/home-demos/home-4.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-five">Home Style 05</Link>
-            <img src="/img/home-demos/home-5.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-six">Home Style 06</Link>
-            <img src="/img/home-demos/home-6.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-seven">Home Style 07</Link>
-            <img src="/img/home-demos/home-7.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-eight">Home Style 08</Link>
-            <img src="/img/home-demos/home-8.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-nine">Home Style 09</Link>
-            <img src="/img/home-demos/home-9.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-ten">Home Style 10</Link>
-            <img src="/img/home-demos/home-10.jpg" alt="#" />
-          </li>
-          <li>
-            <Link href="/home/page-eleven">Home Style 11</Link>
-            <img src="/img/home-demos/home-11.jpg" alt="#" />
+            <Link href="/">Home</Link>
+            <Image 
+              src="/img/home-demos/home-1.jpg" 
+              alt="Home Demo" 
+              width={500} // Set appropriate width
+              height={300} // Set appropriate height
+            />
           </li>
         </ul>
       </li>
+
       <li className="menu-icon">
         <Link href="/about">
           About <FaPlus />
@@ -65,18 +33,15 @@ const MenuList = ({ addListing }) => {
           <li>
             <Link href="/service">Services</Link>
           </li>
-
           <li>
             <Link href="/portfolio">Portfolio</Link>
           </li>
-          <li>
-              <Link href="/portfolio/page-two">Portfolio - 02</Link>
-            </li>
-
+          {/* <li>
+            <Link href="/portfolio/page-two">Portfolio - 02</Link>
+          </li> */}
           <li>
             <Link href="/team">Team</Link>
           </li>
-
           <li>
             <Link href="/faq">FAQ</Link>
           </li>
@@ -85,6 +50,7 @@ const MenuList = ({ addListing }) => {
           </li>
         </ul>
       </li>
+
       <li className="menu-icon">
         <Link href="#">
           Property <FaPlus />
@@ -105,7 +71,6 @@ const MenuList = ({ addListing }) => {
           <li>
             <Link href="/shop/right-sidebar">Property right sidebar</Link>
           </li>
-
           <li>
             <Link href="#">
               Other Pages
@@ -139,11 +104,12 @@ const MenuList = ({ addListing }) => {
           </li>
         </ul>
       </li>
-      <li className="menu-icon">
+
+      {/* <li className="menu-icon">
         <Link href="#">
           News <FaPlus />
-        </Link>
-        <ul>
+        </Link> */}
+        {/* <ul>
           <li>
             <Link href="/blog">News</Link>
           </li>
@@ -156,14 +122,15 @@ const MenuList = ({ addListing }) => {
           <li>
             <Link href="/blog/right-sidebar">News Right sidebar</Link>
           </li>
-        </ul>
-      </li>
+        </ul> */}
+      {/* </li> */}
+
       <li className="menu-icon mega-menu-parent">
         <Link href="#">
           Pages <FaPlus />
         </Link>
         <ul className="mega-menu mega-menu column-4">
-          <li>
+          {/* <li>
             <Link href="#">Inner Pages</Link>
             <ul>
               <li>
@@ -172,16 +139,14 @@ const MenuList = ({ addListing }) => {
               <li>
                 <Link href="/portfolio/page-two">Portfolio - 02</Link>
               </li>
-
               <li>
                 <Link href="/team">Team</Link>
               </li>
-
               <li>
                 <Link href="/faq">FAQ</Link>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li>
             <Link href="#">Inner Pages</Link>
             <ul>
@@ -223,7 +188,6 @@ const MenuList = ({ addListing }) => {
               <li>
                 <Link href="/shop/list">Property List</Link>
               </li>
-
               <li>
                 <Link href="/cart">Cart</Link>
               </li>
@@ -231,11 +195,17 @@ const MenuList = ({ addListing }) => {
           </li>
           <li>
             <Link href="/shop">
-              <img src="/img/banner/menu-banner-1.jpg" alt="#" />
+              <Image 
+                src="/img/banner/menu-banner-1.jpg" 
+                alt="Menu Banner" 
+                width={500} // Set appropriate width
+                height={300} // Set appropriate height
+              />
             </Link>
           </li>
         </ul>
       </li>
+
       <li>
         <Link href="/contact">Contact</Link>
       </li>

@@ -17,9 +17,6 @@ const LanguageDropDown = function () {
                 <a href="#">Arabic</a>
               </li>
               <li>
-                <a href="#">Bengali</a>
-              </li>
-              <li>
                 <a href="#">Chinese</a>
               </li>
               <li>
@@ -27,6 +24,12 @@ const LanguageDropDown = function () {
               </li>
               <li>
                 <a href="#">French</a>
+              </li>
+              <li>
+                <a href="#">German</a>
+              </li>
+              <li>
+                <a href="#">Spanish</a>
               </li>
               <li>
                 <a href="#">Hindi</a>

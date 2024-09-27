@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { FaDribbble,FaInstagram,FaTwitter,FaFacebookF} from 'react-icons/fa';
+import { FaInstagram,FaTwitter,FaFacebookF} from 'react-icons/fa';
 const HeaderSocialLinks = function () {
   return (
     <div className="ltn__social-media">
@@ -15,9 +15,9 @@ const HeaderSocialLinks = function () {
         <li>
           <Link href="#">  <FaInstagram /> </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="#">  <FaDribbble /> </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
