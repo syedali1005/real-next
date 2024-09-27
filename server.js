@@ -3,9 +3,11 @@ const express = require('express');
 const next = require('next');
 const connectDB = require('./src/config/db');
 
+require('dotenv').config(); // Load environment variables
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+
 
 connectDB();
 
