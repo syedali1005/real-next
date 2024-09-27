@@ -91,7 +91,7 @@ const SideBar = ({ products, getSortParams }) => {
           )}
 
           <hr />
-          <h4 className="ltn__widget-title">Price Renge</h4>
+          <h4 className="ltn__widget-title">Price Range</h4>
           {priceRanges.length > 0 ? (
             <>
               <ul>
