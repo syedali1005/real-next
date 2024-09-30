@@ -1,6 +1,6 @@
 // api/routes/timelineRoutes.js
 const express = require('express');
-const Timeline = require('../../src/models/Timeline');
+const Timeline = require('../../src/models/Timeline'); // Adjust path if necessary
 const router = express.Router();
 
 // GET all timeline items

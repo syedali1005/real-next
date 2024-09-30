@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const next = require('next');
 const connectDB = require('./src/config/db');
@@ -8,7 +7,6 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-
 connectDB();
 
 app.prepare().then(() => {
@@ -16,6 +14,7 @@ app.prepare().then(() => {
 
   // Use Express API routes
   server.use('/api/timeline', require('./api/routes/timelineRoutes'));
+  server.use('/api/hello', require('./api/hello'));
 
   // Handle Next.js pages
   server.all('*', (req, res) => {
