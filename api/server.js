@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
 });
 
 // API route to test
-// app.get('/api/hello', (req, res) => {
-//     res.json({ message: 'Burair, World!' }); // Respond with a JSON message
-// });
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Burair, World!' }); // Respond with a JSON message
+});
 
 // Define other routes as needed
 
