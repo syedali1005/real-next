@@ -16,8 +16,8 @@ app.prepare().then(() => {
   const server = express();
 
   // Use Express API routes
-  server.use('/api/register', registerRoutes);
-  server.use('/api/hello', helloRoutes);
+  server.use('/api/timeline', require('./api/routes/timelineRoutes'));
+  server.use('/api/hello', require('./api/hello'));
 
   // Handle Next.js pages
   server.all('*', (req, res) => {
