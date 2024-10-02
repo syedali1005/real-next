@@ -1,8 +1,11 @@
-const express = require('express');
-const next = require('next');
-const connectDB = require('./src/config/db');
+import express from 'express';
+import next from 'next';
+import connectDB from './src/config/db.js'; // Adjust the path if necessary
+import helloRoutes from './api/hello.js'; // Import hello routes
+import registerRoutes from './api/routes/registerRoutes.js'; // Import register routes
 
-require('dotenv').config(); // Load environment variables
+require('dotenv').config(); // Use dotenv with import instead
+
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -13,8 +16,8 @@ app.prepare().then(() => {
   const server = express();
 
   // Use Express API routes
-  server.use('/api/timeline', require('./api/routes/timelineRoutes'));
-  server.use('/api/hello', require('./api/hello'));
+  server.use('/api/register', registerRoutes);
+  server.use('/api/hello', helloRoutes);
 
   // Handle Next.js pages
   server.all('*', (req, res) => {

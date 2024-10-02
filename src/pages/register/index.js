@@ -5,6 +5,7 @@ import { FaRegEnvelopeOpen, FaPhoneAlt } from "react-icons/fa";
 import ShopBreadCrumb from "@/components/breadCrumbs/shop";
 import CallToAction from "@/components/callToAction";
 import Link from "next/link";
+import { useRouter } from "next/router"; // Import useRouter
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,9 @@ function Register() {
   });
 
   const [errors, setErrors] = useState({});
-  
+  const [isSubmitting, setIsSubmitting] = useState(false); // Add state for submission
+  const router = useRouter(); // Initialize useRouter
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -43,8 +46,9 @@ function Register() {
       setErrors(validationErrors);
       return;
     }
-    
+
     setErrors({}); // Reset errors if validation passes
+    setIsSubmitting(true); // Set submitting state
 
     try {
       const response = await fetch('/api/register', {
@@ -55,18 +59,21 @@ function Register() {
         body: JSON.stringify(formData),
       });
       
+
       if (response.ok) {
         const data = await response.json();
         console.log('Registration Successful:', data);
-        // Optionally redirect or show a success message
+        router.push('/login'); // Redirect to login page
       } else {
         const errorData = await response.json();
+        setErrors({ api: errorData.message }); // Set API error to state
         console.error('Registration Error:', errorData);
-        // Handle registration error (e.g., show error message)
       }
     } catch (error) {
       console.error('Network Error:', error);
-      // Handle network error
+      setErrors({ api: 'Network error occurred. Please try again.' }); // Handle network error
+    } finally {
+      setIsSubmitting(false); // Reset after API call
     }
   };
 
@@ -74,8 +81,7 @@ function Register() {
     <>
       <LayoutOne topbar={true}>
         <ShopBreadCrumb title="Account" sectionPace="" currentSlug="Register" />
-
-        {/* LOGIN AREA START (Register) */}
+        
         <div className="ltn__login-area pb-110">
           <Container>
             <Row>
@@ -116,7 +122,7 @@ function Register() {
                     {errors.lastname && <p className="error">{errors.lastname}</p>}
                     
                     <input
-                      type="text"
+                      type="email" // Set type to email
                       name="email"
                       placeholder="Email*"
                       value={formData.email}
@@ -141,7 +147,9 @@ function Register() {
                       onChange={handleChange}
                     />
                     {errors.confirmpassword && <p className="error">{errors.confirmpassword}</p>}
-
+                    
+                    {errors.api && <p className="error">{errors.api}</p>} {/* Display API error */}
+                    
                     <label className="checkbox-inline">
                       <input type="checkbox" value="" />I consent to Herboil
                       processing my personal data in order to send personalized
@@ -157,8 +165,9 @@ function Register() {
                       <button
                         className="theme-btn-1 btn reverse-color btn-block"
                         type="submit"
+                        disabled={isSubmitting} // Disable button while submitting
                       >
-                        CREATE ACCOUNT
+                        {isSubmitting ? 'Creating Account...' : 'CREATE ACCOUNT'}
                       </button>
                     </div>
                   </form>
@@ -179,7 +188,6 @@ function Register() {
             </Row>
           </Container>
         </div>
-        {/* LOGIN AREA END */}
 
         <div className="ltn__call-to-action-area call-to-action-6 before-bg-bottom">
           <Container>
