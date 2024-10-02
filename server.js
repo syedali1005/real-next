@@ -13,8 +13,8 @@ app.prepare().then(() => {
   const server = express();
 
   // Use Express API routes
-  server.use('/api/timeline', require('./api/routes/timelineRoutes'));
-  server.use('/api/hello', require('./api/hello'));
+  // server.use('/api/timeline', require('./api/routes/timelineRoutes'));
+  server.use('/api/hello', require('./src/pages/api/hello'));
 
   // Handle Next.js pages
   server.all('*', (req, res) => {
